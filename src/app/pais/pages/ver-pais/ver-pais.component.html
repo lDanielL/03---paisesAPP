@@ -1,0 +1,14 @@
+<div class="alert alert-info" *ngIf="!pais; else divPais">
+    Esperaaaa...
+</div>
+
+<ng-template #divPais>
+
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{pais.area}}</small></h1>
+        </div>
+    </div>
+
+
+</ng-template>
