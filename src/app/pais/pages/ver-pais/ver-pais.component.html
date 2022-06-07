@@ -1,4 +1,4 @@
-<div class="alert alert-info" *ngIf="!pais; else divPais">
+<div class="alert alert-info" *ngIf="pais.length===0; else divPais">
     Esperaaaa...
 </div>
 
@@ -6,9 +6,37 @@
 
     <div class="row">
         <div class="col-12">
-            <h1>País: <small>{{pais.area}}</small></h1>
+            <h1>País: <small>{{pais[0].name.common}}</small></h1>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img src="{{pais[0].flags.png}}" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población</strong> {{pais[0].population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código númerico</strong> {{pais[0].area }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary me-1" nfgor>{{pais[0].translations}}</span>
+        </div>
+    </div>
+
+    <pre class="mt-5">
+        {{pais | json}}
+    </pre>
 
 </ng-template>
