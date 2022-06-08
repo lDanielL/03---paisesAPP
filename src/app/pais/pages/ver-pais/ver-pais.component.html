@@ -24,6 +24,9 @@
                 <li class="list-group-item">
                     <strong>Código númerico</strong> {{pais[0].area }}
                 </li>
+                <li class="list-group-item">
+                    <strong>Código cca2</strong> {{pais[0].cca2 }}
+                </li>
             </ul>
         </div>
     </div>
@@ -31,12 +34,14 @@
     <h3>Traducciones</h3>
     <div class="row">
         <div class="col">
-            <span class="badge bg-primary me-1" nfgor>{{pais[0].translations}}</span>
+            <span class="badge bg-primary me-1" *ngFor="let item of pais[0].translations | keyvalue">
+                {{item.value.official}}
+            </span>
         </div>
     </div>
-
+    <!-- 
     <pre class="mt-5">
         {{pais | json}}
-    </pre>
+    </pre> -->
 
 </ng-template>

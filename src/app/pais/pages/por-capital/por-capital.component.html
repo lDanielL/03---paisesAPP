@@ -1,14 +1,18 @@
-<h2>Por Capital</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
+
+    <h2>Por Capital</h2>
+    <hr>
 
 
-<div class="row">
-    <div class="col">
-        <app-pais-input (onEnter)="buscar($event)" placeholder="Buscar Capital..."></app-pais-input>
+    <div class="row">
+        <div class="col">
+            <app-pais-input (onEnter)="buscar($event)" placeholder="Buscar Capital..."></app-pais-input>
+        </div>
     </div>
-</div>
 
-<hr>
+    <hr>
+
+</div>
 
 <div class="alert alert-danger " *ngIf="hayError ">
     No se encontró nada para {{termino}}...
